@@ -3,9 +3,9 @@
 void print_buffer(char buffer[], int *buff_ind);
 
 /**
- * _printf - it prints function
+ * _printf - the printf function
  * @format: format
- * Return: print chars
+ * Return: printed chars.
  */
 int _printf(const char *format, ...)
 {
@@ -26,6 +26,7 @@ int _printf(const char *format, ...)
 			buffer[buff_ind++] = format[i];
 			if (buff_ind == BUFF_SIZE)
 				print_buffer(buffer, &buff_ind);
+			/* write(1, &format[i], 1);*/
 			printed_chars++;
 		}
 		else
@@ -52,9 +53,9 @@ int _printf(const char *format, ...)
 }
 
 /**
- * print_buffer - it prints the contents of the buffer
- * @buffer: its an array of chars
- * @buff_ind: it index to add next chars, it represents the length
+ * print_buffer - it prints the contents of the buffer if it exist
+ * @buffer: an array of chars
+ * @buff_ind: the index at which to add next char, represents the length.
  */
 void print_buffer(char buffer[], int *buff_ind)
 {
